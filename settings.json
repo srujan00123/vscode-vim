@@ -1,0 +1,220 @@
+{
+  "workbench.colorTheme": "Default Dark Modern",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["<C-h>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusLeftGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusDownGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusUpGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<c-l>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusRightGroup"
+        }
+      ]
+    }
+  ],
+  //press ctrl + h,j,k,l to move between different panes
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "v"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorRight"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "s"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorDown"
+        }
+      ]
+    },
+    {
+      "before": ["<C-h>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusLeftGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<C-j>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusDownGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<C-k>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusUpGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<c-l>"],
+      "commands": [
+        {
+          "command": "workbench.action.focusRightGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": ["editor.action.showHover"]
+    },
+    {
+      "before": ["<leader>", "w"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": [":x"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["<leader>", "i"],
+      "commands": ["extension.toggleBool"]
+    },
+    {
+      "before": ["'", "a"],
+      "after": ["`", "a"]
+    },
+    {
+      "before": ["'", "b"],
+      "after": ["`", "b"]
+    },
+    {
+      "before": ["ctrl", "v"],
+      "after": ["ctrl", "q"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    }, // open file
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["workbench.action.replaceInFiles"]
+    },
+    {
+      "before": ["<leader>", "f", "e"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility"
+        }
+      ]
+    },
+    // search word in all files
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": [
+        {
+          "command": "workbench.action.findInFiles"
+        }
+      ]
+    },
+    //open file explorer
+    // search word in using periscope extension using ripgrep, fzf
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["periscope.search"],
+      "when": ["editorTextFocus"]
+    }
+  ],
+  "vim.foldfix": true,
+  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-a>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-p>": false,
+    "<C-e>": false
+  },
+  "vim.leader": "<space>",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.surround": true,
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.autoindent": true,
+  "workbench.startupEditor": "none",
+  "workbench.settings.editor": "json",
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "security.workspace.trust.untrustedFiles": "open"
+}

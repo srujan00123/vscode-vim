@@ -1,0 +1,57 @@
+[
+  {
+    "key": "v",
+    "command": "periscope.openInHorizontalSplit",
+    "when": "periscopeActive"
+  },
+  {
+    "key": "ctrl+g",
+    "command": "projectManager.listGitProjects#sideBarGit"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "c",
+    "command": "filesExplorer.copy",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "v",
+    "command": "filesExplorer.paste",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "shift+t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "shift+t",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "shift+a",
+    "command": "workbench.action.terminal.focusNext"
+  },
+  {
+    "key": "shift+b",
+    "command": "workbench.action.terminal.focusPrevious"
+  }
+]
