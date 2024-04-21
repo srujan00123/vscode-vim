@@ -1,6 +1,16 @@
+// this file is in the following path: C:\Users\{username}\AppData\Roaming\Code\User\settings.json
+// vim keybindings can only be placed in main user settings.json file
+// if you have a profile specific settings.json file, you can't place vim keybindings in that file,
+// all vim keybindings work only in editor focus
+
+// mapping j j to escape key
 {
-  "workbench.colorTheme": "Default Dark Modern",
   "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    },
+    // ctrl + h,j,k,l to move between different panes
     {
       "before": ["<C-h>"],
       "commands": [
@@ -34,7 +44,7 @@
       ]
     }
   ],
-  //press ctrl + h,j,k,l to move between different panes
+  // split editor right and down
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": ["<leader>", "v"],
@@ -45,45 +55,14 @@
       ]
     },
     {
-      "before": ["<leader>", "s"],
+      "before": ["<leader>", "x"],
       "commands": [
         {
           "command": "workbench.action.splitEditorDown"
         }
       ]
     },
-    {
-      "before": ["<C-h>"],
-      "commands": [
-        {
-          "command": "workbench.action.focusLeftGroup"
-        }
-      ]
-    },
-    {
-      "before": ["<C-j>"],
-      "commands": [
-        {
-          "command": "workbench.action.focusDownGroup"
-        }
-      ]
-    },
-    {
-      "before": ["<C-k>"],
-      "commands": [
-        {
-          "command": "workbench.action.focusUpGroup"
-        }
-      ]
-    },
-    {
-      "before": ["<c-l>"],
-      "commands": [
-        {
-          "command": "workbench.action.focusRightGroup"
-        }
-      ]
-    },
+    // move to next and previous editor tabs
     {
       "before": ["<leader>", "n"],
       "commands": ["workbench.action.nextEditor"]
@@ -92,26 +71,28 @@
       "before": ["<leader>", "p"],
       "commands": ["workbench.action.previousEditor"]
     },
+    // show hover
     {
       "before": ["<leader>", "k"],
       "commands": ["editor.action.showHover"]
     },
+    // save and close file
+    // ctrl + s to save file , cant have <leader> + w as it is used by camelCaseMotion plugin
     {
-      "before": ["<leader>", "w"],
+      "before": ["<leader>", "s"],
       "commands": [":w"]
-    },
-    {
-      "before": ["<leader>", "x"],
-      "commands": [":x"]
     },
     {
       "before": ["<leader>", "q"],
       "commands": [":q"]
     },
+    //toggle boolean
     {
       "before": ["<leader>", "i"],
       "commands": ["extension.toggleBool"]
     },
+    //easy mapping for quick mark and replace. simply use ma to mark a position where you want to yank something to and once you select what you want to yank, use 'ap to yank it to the marked position
+    //by default, ` is used, ' is used for convinience'
     {
       "before": ["'", "a"],
       "after": ["`", "a"]
@@ -120,10 +101,12 @@
       "before": ["'", "b"],
       "after": ["`", "b"]
     },
+    // reamap ctrl+v to ctrl+q for visual block mode
     {
       "before": ["ctrl", "v"],
       "after": ["ctrl", "q"]
     },
+    // got to next and previous error
     {
       "before": ["]", "d"],
       "commands": ["editor.action.marker.next"],
@@ -134,6 +117,7 @@
       "commands": ["editor.action.marker.prev"],
       "when": "editorFocus"
     },
+    // code actoins/ quick fix
     {
       "before": ["<leader>", "c", "a"],
       "commands": ["editor.action.quickFix"]
@@ -141,7 +125,8 @@
     {
       "before": ["<leader>", "f", "m"],
       "commands": ["editor.action.formatDocument"]
-    }, // open file
+    },
+    // Find files / open files
     {
       "before": ["<leader>", "f", "f"],
       "commands": [
@@ -150,6 +135,7 @@
         }
       ]
     },
+    // easier remapping for find and replace for current file and all files using vscode's builtin find and replace
     {
       "before": ["<leader>", "r"],
       "commands": ["editor.action.startFindReplaceAction"],
@@ -159,6 +145,8 @@
       "before": ["<leader>", "r", "f"],
       "commands": ["workbench.action.replaceInFiles"]
     },
+    //toggle sidebar visibility
+    //using vscode default keybinding for ctrl+shift+e for explorer
     {
       "before": ["<leader>", "f", "e"],
       "commands": [
@@ -189,6 +177,7 @@
   "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   "explorer.confirmDelete": false,
+  //disable some default keybindings to avoid conflict with vscode keybindings
   "vim.handleKeys": {
     "<C-d>": true,
     "<C-s>": false,
@@ -200,18 +189,22 @@
     "<C-y>": false,
     "<C-p>": false,
     "<C-e>": false,
-    "<C-b>": false
+    "<C-b": false
   },
   "vim.leader": "<space>",
   "vim.highlightedyank.enable": true,
   "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
   "vim.highlightedyank.textColor": "white",
+  //setting default formatter for different file types
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  //vim plugins
   "vim.surround": true,
   "vim.easymotion": true,
   "vim.camelCaseMotion.enable": true,
+
+  //other config
   "vim.autoindent": true,
   "workbench.startupEditor": "none",
   "workbench.settings.editor": "json",
