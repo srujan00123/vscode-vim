@@ -1,0 +1,128 @@
+// place this folder in the settings.json of your user profile if you have or in the default settings.json if you dont have a user profile.
+// this file is in the following path: C:\Users\{username}\AppData\Roaming\Code\User\profiles\{profileid}\settings.json
+{
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "//",
+      "color": "#474747",
+      "strikethrough": true,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
+  "vim.surround": true,
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+  "vim.autoindent": true,
+  "vim.leader": "<space>",
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-a>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-p>": false,
+    "<C-e>": false,
+    "<C-b": false,
+    "<C-j>": false,
+    "<C-k>": false,
+    "<C-r": true
+  },
+  // To improve performance",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  "vim.foldfix": true,
+  // change teh base folder to the folder where you keep your projects
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.codeActionsOnSave": {},
+  "workbench.colorTheme": "Default Dark Modern",
+  "git.enableSmartCommit": true,
+  "projectManager.git.baseFolders": ["F:\\PycharmProjects\\Trydjango"],
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "diffEditor.ignoreTrimWhitespace": false
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": true,
+    "markdown": false,
+    "scminput": false
+  },
+  "jupyter.interactiveWicreationModendow.": "perFile",
+  "files.autoSave": "onFocusChange",
+  "ruff.showNotifications": "onWarning",
+  "workbench.colorCustomizations": {
+    "editor.lineHighlightBorder": "#ffffff57",
+    "editor.wordHighlightBorder": "#bbbbbb",
+    "editor.inactiveSelectionBackground": "#6f009b",
+    "editor.findMatchHighlightBackground": "#000000",
+    "editor.findMatchHighlightBorder": "#ff0202",
+
+    // change editor text area to full black
+    "editor.background": "#000000"
+  },
+  "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.editor.pinnedTabsOnSeparateRow": true,
+  "workbench.editor.wrapTabs": true,
+  "interactiveWindow.executeWithShiftEnter": true,
+  "workbench.editorAssociations": {
+    "*.docx": "default"
+  },
+  "editor.accessibilitySupport": "off"
+}
