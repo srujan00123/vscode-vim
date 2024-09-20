@@ -1,6 +1,6 @@
 [
   {
-    "key": "v",
+    "key": "ctrl+v",
     "command": "periscope.openInHorizontalSplit",
     "when": "periscopeActive"
   },
@@ -39,17 +39,23 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
   {
-    "key": "shift+t",
-    "command": "workbench.action.togglePanel"
-  },
-  {
-    "key": "shift+a",
+    "key": "ctrl+shift+a",
     "command": "workbench.action.terminal.focusNext",
     "when": "terminalFocus"
   },
   {
-    "key": "shift+b",
+    "key": "ctrl+shift+b",
     "command": "workbench.action.terminal.focusPrevious",
     "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   }
 ]
