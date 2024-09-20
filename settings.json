@@ -1,64 +1,284 @@
-[
-  {
-    "key": "ctrl+v",
-    "command": "periscope.openInHorizontalSplit",
-    "when": "periscopeActive"
-  },
-  {
-    "key": "ctrl+g",
-    "command": "projectManager.listGitProjects#sideBarGit"
-  },
-  {
-    "key": "a",
-    "command": "explorer.newFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "c",
-    "command": "filesExplorer.copy",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "v",
-    "command": "filesExplorer.paste",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "f",
-    "command": "explorer.newFolder",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "d",
-    "command": "deleteFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "r",
-    "command": "renameFile",
-    "when": "filesExplorerFocus && !inputFocus"
-  },
-  {
-    "key": "ctrl+shift+a",
-    "command": "workbench.action.terminal.focusNext",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+b",
-    "command": "workbench.action.terminal.focusPrevious",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+k",
-    "command": "selectPrevSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  },
-  {
-    "key": "ctrl+j",
-    "command": "selectNextSuggestion",
-    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
-  }
-  //focus editor
+// this file is in the following path: C:\Users\{username}\AppData\Roaming\Code\User\settings.json
+// vim keybindings can only be placed in main user settings.json file
+// if you have a profile specific settings.json file, you can't place vim keybindings in that file,
+// all vim keybindings work only in editor focus
 
-  // close side panel
-]
+// mapping j j to escape key
+{
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<leader>", "h"],
+      "commands": [
+        {
+          "command": "workbench.action.focusLeftGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "l"],
+      "commands": [
+        {
+          "command": "workbench.action.focusRightGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "j"],
+      "commands": [
+        {
+          "command": "workbench.action.focusBelowGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "k"],
+      "commands": [
+        {
+          "command": "workbench.action.focusAboveGroup"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "m"],
+      // toggle maximize editor group
+      "commands": [
+        {
+          "command": "workbench.action.toggleMaximizeEditorGroup"
+        }
+      ],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["<leader>", "g", "d"],
+      // peek definition
+      "commands": [
+        {
+          "command": "editor.action.peekDefinition",
+          "when": "editorHasDefinitionProvider && editorTextFocus && !inReferenceSearchEditor && !isInEmbeddedEditor && !isInReferenceSearchEditor && !isInQuickOpen"
+        }
+      ]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    // split editor right and down
+    {
+      "before": ["<leader>", "v"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorRight"
+        }
+      ]
+    },
+    {
+      "before": ["<leader>", "x"],
+      "commands": [
+        {
+          "command": "workbench.action.splitEditorDown"
+        }
+      ]
+    },
+    // move to next and previous editor tabs
+    {
+      "before": ["<leader>", "n"],
+      "commands": ["workbench.action.nextEditor"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "commands": ["workbench.action.previousEditor"]
+    },
+    // show hover
+    {
+      "before": ["<leader>", "g", "h"],
+      "commands": ["editor.action.showHover"]
+    },
+    // save and close file
+    // ctrl + s to save file , cant have <leader> + w as it is used by camelCaseMotion plugin
+    {
+      "before": ["<leader>", "s"],
+      "commands": [":w"]
+    },
+    {
+      "before": ["<leader>", "q"],
+      "commands": [":q"]
+    },
+    {
+      "before": ["<leader>", "s", "n"],
+      "commands": ["search.action.focusNextSearchResult"],
+      "when": "inSearchEditor && searchViewletVisible && editorFocus"
+    },
+    // search previous
+    {
+      "before": ["<leader>", "s", "p"],
+      "commands": ["search.action.focusPreviousSearchResult"],
+      "when": "inSearchEditor && searchViewletVisible && editorFocus"
+    },
+
+    //toggle boolean
+    {
+      "before": ["<leader>", "i"],
+      "commands": ["extension.toggleBool"]
+    },
+    // reamap ctrl+v to ctrl+q for visual block mode
+    {
+      "before": ["ctrl", "v"],
+      "after": ["ctrl", "q"]
+    },
+    // got to next and previous error
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.next"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.prev"],
+      "when": "editorFocus"
+    },
+    // code actoins/ quick fix
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "f", "m"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    // Find files / open files
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": [
+        {
+          "command": "workbench.action.quickOpen"
+        }
+      ]
+    },
+    // easier remapping for find and replace for current file and all files using vscode's builtin find and replace
+    {
+      "before": ["<leader>", "r"],
+      "commands": ["editor.action.startFindReplaceAction"],
+      "when": "editorFocus"
+    },
+    {
+      "before": ["<leader>", "r", "f"],
+      "commands": ["workbench.action.replaceInFiles"]
+    },
+    //toggle sidebar visibility
+    //using vscode default keybinding for ctrl+shift+e for explorer
+    {
+      "before": ["<leader>", "e"],
+      "commands": [
+        {
+          "command": "workbench.action.toggleSidebarVisibility"
+        }
+      ]
+    },
+    // search word in all files
+    {
+      "before": ["<leader>", "f", "s"],
+      "commands": [
+        {
+          "command": "workbench.action.findInFiles"
+        }
+      ]
+    },
+    //go to references
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.referenceSearch.trigger"]
+    },
+    //open file explorer
+    // search word in using periscope extension using ripgrep, fzf,
+    {
+      "before": ["<leader>", "f", "w"],
+      "commands": ["periscope.search"],
+      "when": ["editorTextFocus"]
+    },
+    // toggle zen mode
+    {
+      "before": ["<leader>", "z"],
+      "commands": ["workbench.action.toggleZenMode"]
+    },
+    {
+      "before": ["]", "f"],
+      "commands": [
+        "editor.action.nextMatchFindAction",
+        {
+          "command": "type",
+          "args": { "text": "<Esc>", "replacePreviousChar": true, "delay": 100 }
+        }
+      ]
+    },
+    {
+      "before": ["[", "f"],
+      "commands": [
+        "editor.action.previousMatchFindAction",
+        {
+          "command": "type",
+          "args": { "text": "<Esc>", "replacePreviousChar": true, "delay": 100 }
+        }
+      ]
+    } // next match and previous match
+  ],
+  "vim.foldfix": true,
+  "vim.useSystemClipboard": true,
+  "editor.formatOnSave": true,
+  "editor.minimap.enabled": false,
+  "explorer.confirmDelete": false,
+  //disable some default keybindings to avoid conflict with vscode keybindings
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-s>": false,
+    "<C-z>": false,
+    "<C-c>": false,
+    "<C-v>": false,
+    "<C-a>": false,
+    "<C-x>": false,
+    "<C-y>": false,
+    "<C-p>": false,
+    "<C-e>": false,
+    "<C-b": false,
+    "<C-j>": false,
+    "<C-k>": false
+  },
+  "vim.leader": "<space>",
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "rgba(230, 97, 89, 0.7)",
+  "vim.highlightedyank.textColor": "white",
+  //setting default formatter for different file types
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  //vim plugins
+  "vim.surround": true,
+  "vim.easymotion": true,
+  "vim.camelCaseMotion.enable": true,
+
+  //other config
+  "vim.autoindent": true,
+  "workbench.startupEditor": "none",
+  "workbench.settings.editor": "json",
+  "editor.stickyScroll.enabled": true,
+  "editor.linkedEditing": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "remote.SSH.remotePlatform": {
+    "139.59.54.62": "linux",
+    "139.59.55.157": "linux",
+    "ec2-3-110-136-65.ap-south-1.compute.amazonaws.com": "linux",
+    "ec2-3-110-182-10.ap-south-1.compute.amazonaws.com": "linux",
+    "ec2-13-127-75-226.ap-south-1.compute.amazonaws.com": "linux",
+    "174.138.123.141": "linux",
+    "64.227.152.6": "linux",
+    "144.126.254.234": "linux",
+    "65.0.205.53": "linux",
+    "35.154.145.80": "linux",
+    "43.205.198.40": "linux",
+    "3.110.229.183": "linux",
+    "15.206.190.209": "linux"
+  }
+}
